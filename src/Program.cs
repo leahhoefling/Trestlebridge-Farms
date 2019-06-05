@@ -7,7 +7,7 @@ namespace Trestlebridge
 {
     class Program
     {
-        static void DisplayBanner ()
+        static void DisplayBanner()
         {
             Console.Clear();
             Console.WriteLine();
@@ -23,13 +23,14 @@ namespace Trestlebridge
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.White;
-			Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
 
             Farm Trestlebridge = new Farm();
 
             while (true)
             {
                 DisplayBanner();
+                //options for user to select action from
                 Console.WriteLine("1. Create Facility");
                 Console.WriteLine("2. Purchase Animals");
                 Console.WriteLine("3. Purchase Seeds");
@@ -39,6 +40,7 @@ namespace Trestlebridge
 
                 Console.WriteLine("Choose a FARMS option");
                 Console.Write("> ");
+                //this is reading whatever the user selected and then is used below in the conditionals
                 string option = Console.ReadLine();
 
                 if (option == "1")
@@ -62,8 +64,10 @@ namespace Trestlebridge
                 else if (option == "5")
                 {
                     Console.WriteLine("Today is a great day for farming");
+                    // the break exits out of console app
                     break;
                 }
+                //if user doesn't select any correct options, app alerts them it was incorrect
                 else
                 {
                     Console.WriteLine($"Invalid option: {option}");
