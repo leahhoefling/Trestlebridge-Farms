@@ -4,13 +4,13 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Animals
 {
-    public class Goat : IResource, IGrazing //need to add Icompost after i make the interface
+    public class Goat : IResource, IGrazing, ICompostProducing
     {
 
         private Guid _id = Guid.NewGuid();
 
         //will probably need this as how much compost is produced
-        //private double _meatProduced = 18.25;
+        private double _compostProduced = 7.5;
 
         private string _shortId
         {
@@ -29,11 +29,11 @@ namespace Trestlebridge.Models.Animals
             Console.WriteLine($"Goat {this._shortId} just ate {this.GrassPerDay}kg of grass");
         }
 
-        //will need compost produced
-        // public double Butcher()
-        // {
-        //     return _meatProduced;
-        // }
+        // will need compost produced
+        public double Compost()
+        {
+            return _compostProduced;
+        }
 
         public override string ToString()
         {
