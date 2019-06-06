@@ -4,13 +4,13 @@ using Trestlebridge.Interfaces;
 
 namespace Trestlebridge.Models.Animals
 {
-    public class Ostrich : IResource, IGrazing, IMeatProducing
+    public class Ostrich : IResource, IGrazing, IMeatProducing, IEggProducing
     {
 
-        private Guid _id = Guid.NewGuid();
         private double _meatProduced = 2.6;
         private double _eggsProduced = 3;
 
+        private Guid _id = Guid.NewGuid();
 
         private string _shortId
         {
